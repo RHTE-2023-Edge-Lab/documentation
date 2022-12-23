@@ -15,7 +15,7 @@
 
 #### 1. 
 
-#### 2. Test to connect to your kafka topic
+#### 2. Test your kafka topic
 
 Connect to one of your kafka pod
 ```
@@ -33,7 +33,12 @@ sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule require
 EOF
 ```
 
-Connect to your topic
+Produce messages in your Kafka topic
 ```
-./bin/kafka-console-consumer.sh --bootstrap-server <kafka-bootstrap-service>:9092 --topic <your-topic> --consumer.config /tmp/client.properties 
+./bin/kafka-console-producer.sh --bootstrap-server <kafka-bootstrap-service>:9092 --topic <your-topic> --producer.config /tmp/client.properties
+```
+
+Connect to your topic to see your messages
+```
+./bin/kafka-console-consumer.sh --bootstrap-server <kafka-bootstrap-service>:9092 --topic <your-topic> --consumer.config /tmp/client.properties --from-beginning
 ```
