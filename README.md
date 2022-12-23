@@ -13,9 +13,9 @@
 
 ### x. Kafka
 
-1. 
+#### 1. 
 
-2. Connect to your kafka topic
+#### 2. Connect to your kafka topic
 
 Connect to one of your kafka pod
 ```
