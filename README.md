@@ -24,13 +24,13 @@ oc rsh -n <project> <cluster-name>-kafka-0
 
 Create a client.properties file
 ```
-sh-4.4$ cat <<EOF>> /tmp/client.properties
-> sasl.mechanism=SCRAM-SHA-512
-> security.protocol=SASL_PLAINTEXT
-> sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required \
->   username="<user>" \
->   password="<password";
-> EOF
+cat <<EOF>> /tmp/client.properties
+sasl.mechanism=SCRAM-SHA-512
+security.protocol=SASL_PLAINTEXT
+sasl.jaas.config=org.apache.kafka.common.security.scram.ScramLoginModule required \
+   username="<user>" \
+   password="<password";
+EOF
 ```
 
 Connect to your topic
